@@ -7,6 +7,7 @@ class Board:
 
         #Create the board
         self.board = self.make_new_board()
+        self.assign_values_to_board()
 
 
 
@@ -16,7 +17,6 @@ class Board:
 
     def make_new_board(self):
         # Construct a new board based on the dim size and num bombs
-
 
         board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
         # Generate a new board
@@ -37,6 +37,26 @@ class Board:
             bombs_planted += 1
 
         return board
+
+    def assign_values_to_board(self):
+        for r in range(self.dim_size):
+            for c in range(self.dim_size):
+                if self.board[r][c] == '*':
+                    # if this is already a bomb, we don't want to calculate anything
+                    continue
+                self.board[r][c] = self.get_num_neighboring_bombs(r, c)
+
+    def get_num_neighboring_bombs(self, row, col):
+        # iterate through each of the neighboring positions and sum number of bombs
+        # top left: (row-1, col-1)
+        # top middle: (row-1, col)
+        # top right: (row-1, col+1)
+        # left: (row, col+1)
+        # right: (row, col+1)
+        # bottom left: (row+1, col-1)
+        # bottom middle: (row+1, col)
+        # bottom right:(row+1, col+1)
+        
 
 
 
