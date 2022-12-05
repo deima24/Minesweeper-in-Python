@@ -56,7 +56,19 @@ class Board:
         # bottom left: (row+1, col-1)
         # bottom middle: (row+1, col)
         # bottom right:(row+1, col+1)
-        
+
+        # make sure to not go out of bounds
+
+        num_neighboring_bombs = 0
+        for r in range(max(row-1), min(self.dim_size-1, row+1)+1):
+            for c in range(max(0, col-1), min(self.dim_size - 1, col+1)+1):
+                if r == row and c == col:
+                    # our original location, don't check
+                    continue
+                if self.board[r][c] == '*':
+                    num_neighboring_bombs += 1
+
+        return num_neighboring_bombs
 
 
 
@@ -67,6 +79,8 @@ def play(dim_size = 10, num_bombs = 10):
 
 
     # Step 1: Create the board and plant the bombs
+    board = Board(dim_size, num_bombs)
+
     # Step 2: Show the user the board and ask for where they want to dig
     # Step 3: If location is a bomb, show game over message
     # Step 4: If location is not a bomb, dig recursively until each square is at
