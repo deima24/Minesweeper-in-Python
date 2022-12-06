@@ -71,6 +71,25 @@ class Board:
         return num_neighboring_bombs
 
 
+    def dig(self, row, col):
+        # dig at that location!
+        # return True if succesful dig, False if bomb dug
+
+        # a few scenarios:
+        # hit a bomb (game over)
+        # dig at location with neighboring bombs (finish dig)
+        # dig at location with no neighboring bombs (dig neighbors)
+
+        self.dug.add((row, col))    # keep track that we dug here
+        
+        if self.board[row][col] == '*':
+            return False
+        elif self.board[row][col] > 0:
+            return True
+
+        
+
+
 
 
 #play the game
