@@ -113,11 +113,6 @@ class Board:
 
         
 
-        
-
-
-
-
 #play the game
 def play(dim_size = 10, num_bombs = 10):
     
@@ -131,4 +126,12 @@ def play(dim_size = 10, num_bombs = 10):
     # Step 4: If location is not a bomb, dig recursively until each square is at
     #   next to a bomb 
     # Step 5: Repeat step 2, 3 and 4 until there are no more places to dig(You win)
+    
+    
+    while len(board.dug) < board.dim_size ** 2 - num_bombs:
+        print(board)
+        # makes sure that reads location when user puts space between numbers
+        user_imput = re.split(',(\\s)*',input("Where would you like to dig? Input as row,rol:"))
+    
+    
     pass
