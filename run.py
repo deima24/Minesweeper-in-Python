@@ -127,7 +127,8 @@ def play(dim_size = 10, num_bombs = 10):
     #   next to a bomb 
     # Step 5: Repeat step 2, 3 and 4 until there are no more places to dig(You win)
     
-    
+    safe = True
+
     while len(board.dug) < board.dim_size ** 2 - num_bombs:
         print(board)
         # makes sure that reads location when user puts space between numbers
@@ -136,5 +137,25 @@ def play(dim_size = 10, num_bombs = 10):
         if row < 0 or row >= board.dim_size or col < 0 or col >= dim_size:
             print("Invalid location. Try again.")
             continue
+
+        # if it's valid, we dig
+        safe = board.dig(row, col)
+        if not safe:
+            # dug a bomb
+            break # game over
+    
+
+    # 2 ways to end loop
+    if safe:
+        print("CONGRATULATIONS!!!! You have won the game!")
+    else:
+        print("SORRY, GAME OVER")
+        # reveal the whole board
+        board.dug = [(r,c) for r in range(board.dim_size) for c in range(board.dim_size)]
+        print(board)
+
+
+play()
+
     
     pass
