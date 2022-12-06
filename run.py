@@ -87,6 +87,32 @@ class Board:
         elif self.board[row][col] > 0:
             return True
 
+        # self.board[row][col] == 0
+        for r in range(max(0, row-1), min(self.dim_size-1)+1):
+            for c in range(max(0, col-1), min(self.dim_size-1, col+1)+1):
+                if (r, c) in self.dug:
+                    continue # don't dig where you've already dug
+                self.dig(r, c)
+
+        return True
+
+
+    def __str__(self):
+        # this function is where if you call print on this object,
+        # it'll print out what this function returns
+        # return a string that shows the board to the player
+
+        # new arrray that represents what the user would see
+        visible_board = [[None for _ in range(self.dim_size)] for _ in range(self.dim_size)]
+        for row in range(self.dim_size):
+            for col in range(self.dim_size):
+                if (row,col) in self.dug:
+                    visible_board[row][col] = str(self.board[row][col])
+                else:
+                    visible_board[row][col] = ' '
+
+        
+
         
 
 
