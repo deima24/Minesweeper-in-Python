@@ -132,6 +132,9 @@ def play(dim_size = 10, num_bombs = 10):
         print(board)
         # makes sure that reads location when user puts space between numbers
         user_imput = re.split(',(\\s)*',input("Where would you like to dig? Input as row,rol:"))
-    
+        row, col = int(user_input[0]), int(user_input[-1])
+        if row < 0 or row >= board.dim_size or col < 0 or col >= dim_size:
+            print("Invalid location. Try again.")
+            continue
     
     pass
