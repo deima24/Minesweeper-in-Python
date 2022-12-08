@@ -61,4 +61,21 @@ Languages
  the game crashes.
  - Col line is not lined up properly.
 
+
+ # Manual Testing
+
+ - When row and col is entered correctlly we dig a hole in there to chech if there is no 
+ mine in that location if we do not dig a mine the game cuntinues and asks to enter difrent
+ location
+
+ ![first test dig](img/test1.png)
+
+ - when we dig a mine the game is over and the user gets a message that its Game Over
+
+ ![game over](img/game%20over.png)
+
+ - User can enter location and put spaces between the number and the game still recognize the location
+
+ ![space in location](img/space%20between%20location.png)
  
+
