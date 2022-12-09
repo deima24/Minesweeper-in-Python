@@ -21,6 +21,7 @@ this classic game and have fun.
  - Randomly generates the board to play so mines will be on a diffrent place every time user plays
  - Asks user where would it likes to dig
  - lets user to chose row and col. starting from 0 to 9
+ - Player can't see the bombs
 
  ![starting game image](img/Start.png)
 
@@ -83,3 +84,7 @@ Languages
  ![space in location](img/space%20between%20location.png)
  
 
+## Future Features 
+
+- Fix the bug where the user enters string game crashes. Make sure it would ask user to enter valid location
+- Make a bigers game board and even let the player to select the board size
