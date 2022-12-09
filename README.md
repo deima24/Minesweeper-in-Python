@@ -53,14 +53,18 @@ Languages
 
 - PEP8 Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors and 0 warnings showing
 
- ## Bugs
+ # Bugs
+
+## Solved Bugs
 
  - Had an issue with the while loop. The issue was the spelling mistpeled word incorectly
  so loop wasn't working properly.
+ - Col line is not lined up properly. Fixed by adding more space to the col line.
+
+ ## Unsolved Bugs
+
  - When the game asks where the user likes to dig and the user enter not number but a letter 
  the game crashes.
- - Col line is not lined up properly.
-
 
  # Manual Testing
 
