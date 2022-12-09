@@ -123,13 +123,13 @@ class Board:
             )
 
         indices = [i for i in range(self.dim_size)]
-        indices_row = ' '
+        indices_row = '   '
         cells = []
         for idx, col in enumerate(indices):
             format = '%-' + str(widths[idx]) + "s"
             cells.append(format % (col))
-        indices_row += ' '.join(cells)
-        indices_row += ' \n'
+        indices_row += '  '.join(cells)
+        indices_row += '  \n'
 
         for i in range(len(visible_board)):
             row = visible_board[i]
