@@ -22,7 +22,7 @@ this classic game and have fun.
  - Asks user where would it likes to dig
  - lets user to chose row and col. starting from 0 to 9
 
- ![starting game image](img/starting%20game.png)
+ ![starting game image](img/Start.png)
 
 
  - user has to chose the location where it wants to dig by entering number 
@@ -30,7 +30,7 @@ this classic game and have fun.
  - when the user submits the location that it want to dig part of the boar 
  will get reveled and the game will ask user to put new location
 
- ![first time dig](img/first%20chose.png)
+ ![first time dig](img/First_dig.png)
 
 
 - If the user enters wrong location the game will ask to enter difrent location.
@@ -68,11 +68,11 @@ Languages
  mine in that location if we do not dig a mine the game cuntinues and asks to enter difrent
  location
 
- ![first test dig](img/test1.png)
+ ![first test dig](img/Test.png)
 
  - when we dig a mine the game is over and the user gets a message that its Game Over
 
- ![game over](img/game%20over.png)
+ ![game over](img/Test2.png)
 
  - User can enter location and put spaces between the number and the game still recognize the location
 
